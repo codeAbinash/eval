@@ -51,7 +51,11 @@ int main(int argc, char **argv) {
 }
 
 void manageFirstBracketAfterOperand(vector<string> &tokens) {
+    // cout << "Manage first bracket" << endl;
+    if(tokens.size() == 0)
+        return;
     string multiplySign = "*";
+    if(tokens.size() == 0) return;
     for (int i = 0; i < tokens.size() - 1; i++) {
         if (isOperand(tokens[i]) && tokens[i + 1] == "(") {
             i++;
@@ -60,6 +64,9 @@ void manageFirstBracketAfterOperand(vector<string> &tokens) {
     }
 }
 void manageLeadingNegativeSign(vector<string> &tokens) {
+    // cout << "Manage Leading Negative Sign" << endl;
+    if(tokens.size() == 0)
+        return;
     string openBracket = "(";
     string closeBracket = ")";
     string zero = "0";
@@ -104,6 +111,7 @@ double eval(string &exp) { return eval(exp, 0); }
 
 double eval(string &exp, double x) {
     vector<string> tokens = breakIntoTokens(exp);
+    // if(tokens.size() == 0) return -1;
     manageFirstBracketAfterOperand(tokens);
     manageLeadingNegativeSign(tokens);
     tokens = convertToPostfixExp(tokens);
@@ -119,10 +127,11 @@ double eval(string &exp, double x) {
             excStack.push(operation(op1, op2, token));
         }
     }
-    return excStack.top();
-    return 0;
+    return excStack.empty() ? -1 : excStack.top();
 }
 vector<string> breakIntoTokens(string &exp) {
+    // cout << "Breaking Into Tokens" << endl;
+
     vector<string> tokens;
     string currentToken = "";
 
@@ -130,7 +139,7 @@ vector<string> breakIntoTokens(string &exp) {
         if (ch == ' ' || ch == '\n' || ch == '\t') continue;
 
         if (!isValidCharacter(ch)) {
-            cout << dye::light_red("Invalid Expression");
+            cout << dye::light_red("Invalid Expression ");
             return tokens;
         }
 
@@ -151,9 +160,11 @@ vector<string> breakIntoTokens(string &exp) {
     return tokens;
 }
 vector<string> convertToPostfixExp(vector<string> &tokens) {
+    // cout << "Convert to postfix" << endl;
     vector<string> postfix;
     stack<string> stk;
-
+    if(tokens.size() == 0)
+        return tokens;
     for (auto &token : tokens) {
         if (isOperand(token))
             postfix.push_back(token);
