@@ -1,4 +1,8 @@
 # eval ⚡
+
+![Release Date](https://img.shields.io/github/release-date/codeabinash/eval?color=limegreen)
+![Tag](https://img.shields.io/github/tag/codeabinash/eval?color=limegreen)
+
 A tool fot evaluating arithmetic expression from your terminal 😎 🧑🏻‍💻.
 
 <img style="width:100%" src="https://codeabinash.github.io/eval/media/logo.png" alt="Logo">
@@ -7,9 +11,9 @@ No need to open your calculator again for basic calculation. Just type `eval {{e
 
 
 ## How to use
-![How to Use](https://codeabinash.github.io/eval/media/example.png)
+![How to Use](https://codeabinash.github.io/eval/media/show.gif)
 
 > Must add this file's location to environment(path) variable.
 
 # Download 
-Download [eval_1.5.0_beta_1_64bit.exe](https://github.com/codeAbinash/eval/releases/download/v1.0.1/eval_x64_1.0.1.exe) (214kb)
+Download [eval_v1.5.0_64bit.exe](https://github.com/codeAbinash/eval/releases/download/v1.5.0/eval_v1.5.0_64bit.exe) (160kb)
