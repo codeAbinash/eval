@@ -16,4 +16,4 @@ No need to open your calculator again for basic calculation. Just type `eval {{e
 > Must add this file's location to environment(path) variable.
 
 # Download 
-Download [eval_v1.5.0_64bit.exe](https://github.com/codeAbinash/eval/releases/download/v1.5.0/eval_v1.5.0_64bit.exe) (160kb)
+Download [eval_v1.5.1_64bit.exe](https://github.com/codeAbinash/eval/releases/download/v1.5.0/eval_v1.5.1_64bit.exe) (160kb)
