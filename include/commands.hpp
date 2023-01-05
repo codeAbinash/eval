@@ -8,12 +8,28 @@ using namespace std;
 namespace command {
 bool version(argCVDef) {
     std::cout << dye::light_green("Eval ") << dye::light_green(__VERSION);
-    std::cout <<  dye::grey(" (C)codeAbinash ") << dye::light_yellow(__version_date) << std::endl;
+    std::cout << dye::grey(" (C)codeAbinash ")
+              << dye::light_yellow(__version_date) << std::endl;
     return true;
 }
 
 bool help(argCVDef) {
-    cout << "Visit " << dye::light_blue("https://github.com/codeAbinash/eval") << " for more information." << endl;
+    version(argCV);
+    cout << endl;
+    cout << dye::grey("Available Commands : ") << endl << endl;
+    cout << dye::light_yellow("   --help") << " : Find some help" << endl;
+    cout << dye::light_yellow("   --version")
+         << " : Check the current version of eval" << endl
+         << endl;
+    cout << dye::grey("How to use : ") << endl << endl;
+    cout << "Write `" << dye::light_yellow("eval")
+         << dye::light_blue(" \"expression\"`") << " to evaluate an expression."
+         << endl;
+    cout << "Or you can write " << dye::light_yellow("`eval`")
+         << " to enter more than one expression." << endl
+         << endl;
+    cout << "Visit " << dye::light_blue("https://github.com/codeAbinash/eval")
+         << " for more information." << endl;
     return true;
 }
 
@@ -21,7 +37,8 @@ bool unknownCommand(argCVDef) {
     cout << "Unknown command "
          << "`" << dye::light_yellow(argv[1]) << "`" << endl;
     cout << dye::grey("Akta command o valo kore lekhte parche na :) !") << endl;
-    cout << "Use " << dye::light_yellow("`eval --help`") <<  " for more information." << endl;
+    cout << "Use " << dye::light_yellow("`eval --help`")
+         << " for more information." << endl;
     return false;
 }
 }  // namespace command
